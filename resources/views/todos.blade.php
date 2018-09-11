@@ -87,12 +87,15 @@
                 </div>
             @endif
             <div class="content">
-                <div class="columns">
-                  <div class="column control">
-                    <input  class="input is-small"  type="text" placeholder="add a todo to the todos list" name="todo">
-                  </div>
+                <div class="field">
+                  <form class="control has-icons-left" action="/create/todo" method="post" >
+                    <input class="input is-large is-primary" type="text" name="todo"  placeholder="add a todo to todos list" >
+                    <span class="icon is-large is-left">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </form>
                 </div>
-                <div class="title m-b-md">
+                <div class="title">
                     Todos
                 </div>
                 <div>
