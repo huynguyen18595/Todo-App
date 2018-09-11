@@ -25,3 +25,7 @@ Route::get('/todos',[
 Route::post('/create/todo',[
     'uses' => 'TodosController@store'
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

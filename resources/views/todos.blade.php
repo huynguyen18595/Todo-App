@@ -70,7 +70,7 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-top: 30px;
             }
         </style>
     </head>
@@ -86,24 +86,41 @@
                     @endauth
                 </div>
             @endif
-            <div class="content">
-                <div class="field">
-                  <form class="control has-icons-left" action="/create/todo" method="post" >
-                    <input class="input is-large is-primary" type="text" name="todo"  placeholder="add a todo to todos list" >
-                    <span class="icon is-large is-left">
-                      <i class="fas fa-search"></i>
-                    </span>
-                  </form>
+            <div class="content m-b-md">
+              <form class="field has-addons" action="/create/todo" method="post" >
+                {{csrf_field()}}
+                <div class="control has-icons-left is-expanded">
+                  <input class="input is-large is-primary is-rounded" type="text" name="todo"  placeholder="add a todo to todos list" >
+                  <span class="icon is-large is-left">
+                    <i class="fas fa-search"></i>
+                  </span>
                 </div>
+                <div class="control">
+                  <button class=" control button is-primary is-large" type="submit" name="button">submit</button>
+                </div>
+              </form>
+
+                <!-- the above is seach box and submit button-->
                 <div class="title">
                     Todos
                 </div>
-                <div>
-                  @foreach($todos as $todo)
-                    {{$todo -> todo}}
-                  <hr>
-                  @endforeach
-                </div>
+                <table class="table is-bordered">
+                  <tbody>
+                    @foreach($todos as $todo)
+                    <tr>
+                      <th>
+                        {{$todo-> id}}
+                      </th>
+                      <td>
+                            {{$todo -> todo}}
+                      </td>
+                      <td>
+                        {{$todo -> created_at}}
+                      </td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
             </div>
         </div>
     </body>
