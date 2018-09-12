@@ -89,22 +89,27 @@
               </div>
             @if (Route::has('login'))
               @auth
-                <div class="navbar-end">
-                  <div class="navbar-item">
-                    <div class="field is-grouped">
-                      <p class="control">
-                        <a href="{{ url('/home') }}">
-                          <span>
-                            <i class="fas fa-home"></i>
-                          </span>
-                          <span>
-                            Home
-                          </span>
-                        </a>
-                      </p>
-                    </div>
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="field is-grouped">
+                    <p class="control">
+                      <a href="#" class="button is-primary" data-toggle="dropdown" role="button" aria-expanded="false">
+                          {{ Auth::user()->first_name }} <span class="caret"></span>
+                      </a>
+                    </p>
+                    <p class="control">
+                      <a class="button is-primary" href="{{ url('/logout') }}">
+                        <span>
+                          <i class="fas fa-sign-out-alt"></i>
+                        </span>
+                        <span>
+                          Logout
+                        </span>
+                      </a>
+                    </p>
                   </div>
                 </div>
+              </div>
               @else
                 <div class="navbar-end">
                   <div class="navbar-item">

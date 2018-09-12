@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+route::get('/home',function(){
+    return view('home');
+});
 Route::get('/new',[
     'uses' => 'PagesController@new'
 ]);
@@ -27,3 +30,8 @@ Route::post('/create/todo',[
 ]);
 
 Auth::routes();
+
+Route::get('/logout', function(){
+   Auth::logout();
+   return view('welcome');
+});

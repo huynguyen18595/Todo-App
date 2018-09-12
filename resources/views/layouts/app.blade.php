@@ -66,12 +66,19 @@
                 <div class="navbar-item">
                   <div class="field is-grouped">
                     <p class="control">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                          {{ Auth::user()->name }} <span class="caret"></span>
+                      <a href="#" class="button is-primary" data-toggle="dropdown" role="button" aria-expanded="false">
+                          {{ Auth::user()->first_name}} {{Auth::user()->last_name}} <span class="caret"></span>
                       </a>
                     </p>
                     <p class="control">
-                      <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a>
+                      <a class="button is-primary" href="{{ url('/logout') }}">
+                        <span>
+                          <i class="fas fa-sign-out-alt"></i>
+                        </span>
+                        <span>
+                          Logout
+                        </span>
+                      </a>
                     </p>
                   </div>
                 </div>
